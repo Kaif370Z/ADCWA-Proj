@@ -1,0 +1,30 @@
+<!-- students.component.html -->
+<!--
+The following code is the HTML template for displaying the list of students.
+It displays a table with columns for the students' SID, and action to delete. 
+The data is displayed using ngFor directive which iterates over the students array.
+The delete button calls the deleteStudent method and passes the student object as a parameter.
+The bottom two links are used for navigating to the lecturers and students pages.
+-->
+<h2>Students</h2>
+<table style="border: 1px solid black;">
+  <thead>
+    <tr>
+      <th style="border: 1px solid black;">SID</th>
+      <th style="border: 1px solid black;">Name</th>
+      <th style="border: 1px solid black;">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let student of students" style="border: 1px solid black;">
+      <td style="border: 1px solid black;">{{student.sid}}</td>
+      <td style="border: 1px solid black;">{{student.name}}</td>
+      <td style="border: 1px solid black;"><button (click)="deleteStudent(student)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Navigation links to other pages -->
+<a routerLink="/lecturers">Lecturers</a>
+<br/>
+<a routerLink="/students">Students</a>

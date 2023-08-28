@@ -1,0 +1,32 @@
+<!-- lecturers.component.html -->
+<!--
+The following code is the HTML template for displaying the list of lecturers.
+It displays a table with columns for the lecturer's LID, name, tax band, salary scale, and action. 
+The data is displayed using ngFor directive which iterates over the lecturers array.
+The update button calls the onUpdate method and passes the lecturer object as a parameter.
+The bottom two links are used for navigating to the lecturers and students pages.
+-->
+<h2>Lecturers</h2>
+<table style="border: 1px solid black;">
+  <thead>
+    <tr style="border: 1px solid black;">
+      <th style="border: 1px solid black;">LID</th>
+      <th style="border: 1px solid black;">Name</th>
+      <th style="border: 1px solid black;">Tax Band</th>
+      <th style="border: 1px solid black;">Salary Scale</th>
+      <th style="border: 1px solid black;">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let lecturer of lecturers" style="border: 1px solid black;">
+      <td style="border: 1px solid black;">{{ lecturer.lid }}</td>
+      <td style="border: 1px solid black;">{{ lecturer.name }}</td>
+      <td style="border: 1px solid black;">{{ lecturer.taxBand }}</td>
+      <td style="border: 1px solid black;">{{ lecturer.salaryScale }}</td>
+      <td style="border: 1px solid black;"><button (click)="onUpdate(lecturer)">Update</button></td>
+    </tr>
+  </tbody>
+</table>
+<a routerLink="/lecturers">Lecturers</a>
+<br />
+<a routerLink="/students">Students</a>

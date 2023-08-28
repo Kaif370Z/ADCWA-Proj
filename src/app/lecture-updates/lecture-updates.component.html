@@ -1,0 +1,25 @@
+<h2>Update Lecturer</h2>
+
+<form (ngSubmit)="onSubmit()">
+  <label>
+    LID:
+    <input type="text" name="lid" [(ngModel)]="lecturer.lid" readonly />
+  </label>
+  <br /><br />
+  <label>
+    Name:
+    <input type="text" name="name" [(ngModel)]="lecturer.name" placeholder="{{lecturer.name}}" />
+  </label>
+  <br /><br />
+  <label>
+    Tax Band:
+    <input type="text" name="taxBand" [(ngModel)]="lecturer.taxBand" placeholder="{{lecturer.taxBand}}" />
+  </label>
+  <br /><br />
+  <label>
+    Salary Scale:
+    <input type="number" name="salaryScale" [(ngModel)]="lecturer.salaryScale" placeholder="{{lecturer.salaryScale}}" />
+  </label>
+  <br /><br />
+  <button type="submit">Update</button>
+</form>
